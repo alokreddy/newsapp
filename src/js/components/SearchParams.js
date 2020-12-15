@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import Button from "react-bootstrap/Button";
 import { getData } from "../actions/index";
 import Post from "./Posts";
 
@@ -8,6 +9,7 @@ const SearchParams = (props) => {
 
   return (
     <div className="search-params">
+      {/* <pre>{JSON.stringify(props)}</pre> */}
       <h2>Search results for {searchText}</h2>
       <form
         onSubmit={(e) => {
@@ -26,7 +28,7 @@ const SearchParams = (props) => {
             }}
           />
         </label>
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
       <Post data={props.articles} />
     </div>
